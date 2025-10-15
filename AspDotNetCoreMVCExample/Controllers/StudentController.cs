@@ -1,28 +1,31 @@
 ﻿using AspDotNetCoreMVCExample.Data;
 using AspDotNetCoreMVCExample.Models;
+using AspDotNetCoreMVCExample.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspDotNetCoreMVCExample.Controllers
 {
     public class StudentController : Controller
     {
-       
-        private static List<Student> students = new List<Student>
+        private readonly IStudentRepository _studentRepository;
+        public StudentController(IStudentRepository studentRepository)
         {
-            new Student { Id = 1, Name ="Abdur Rahim", Age = 30,Email = "rahim@gmail.com", Mobile = "019183838333",Gender = "Male"},
-            new Student { Id = 2, Name ="Alamin mia", Age = 25,Email = "alamin@gmail.com", Mobile = "0191838383213",Gender = "Male"},
-            new Student { Id = 3, Name ="Mehedi hasan", Age = 22,Email = "mehedi@gmail.com", Mobile = "019183832333",Gender = "Male"},
-            new Student { Id = 4, Name ="Khadija akter", Age = 23,Email = "khadija@gmail.com", Mobile = "019183888333",Gender = "Female"},
-        };
+            _studentRepository = studentRepository;
+        }
         
+
+        //GET: All Student
         public IActionResult Index()
         {
+            var students = _studentRepository.GetAllStudents();
             return View(students);
         }
+        //GET: Create New Student
         public IActionResult Create()
         {
             return View();
         }
+        //POST: Create New Student
         [HttpPost]
         public IActionResult Create(Student student)
         {
@@ -31,28 +34,31 @@ namespace AspDotNetCoreMVCExample.Controllers
                 return View(student);
 
             }
-            student.Id = students.Count + 1;
-            students.Add(student);
+            _studentRepository.AddStudent(student);
+            
             return RedirectToAction("Index");
         }
+        //GET: Student Details
         public IActionResult Details(int id)
         {
-            Student student = students.FirstOrDefault(x => x.Id == id);
-            if(student == null)
-            {
-                return NotFound();
-            }
-            return View(student);
-        }
-        public IActionResult Edit(int id)
-        {
-            Student student = students.FirstOrDefault(x => x.Id == id);
+            Student student = _studentRepository.GetStudentById(id);
             if (student == null)
             {
                 return NotFound();
             }
             return View(student);
         }
+        // GET: Edit Student
+        public IActionResult Edit(int id)
+        {
+            Student student = _studentRepository.GetStudentById(id);
+            if (student == null)
+            {
+                return NotFound();
+            }
+            return View(student);
+        }
+        // POST: Edit Student
         [HttpPost]
         public IActionResult Edit(Student student)
         {
@@ -60,34 +66,30 @@ namespace AspDotNetCoreMVCExample.Controllers
             {
                 return View(student);
             }
-            var existingStudent = students.FirstOrDefault(x=>x.Id == student.Id);
+            var existingStudent = _studentRepository.GetStudentById(student.Id);
             if (existingStudent == null)
             {
                 return NotFound();
             }
-            existingStudent.Name = student.Name;
-            existingStudent.Email = student.Email;
-            existingStudent.Age = student.Age;
-            existingStudent.Mobile  = student.Mobile;
-            existingStudent.Gender = student.Gender;
-
+            _studentRepository.UpdateStudent(student);
             return RedirectToAction("Index");
         }
-        // Delete Method
+        //GET: Delete Student
         public IActionResult Delete(int id)
         {
 
-            var student = students.FirstOrDefault(x => x.Id == id);
+            var student =_studentRepository.GetStudentById(id);
             if (student == null) return NotFound();
             return View(student);
         }
+        //POST: Delete Student
         [HttpPost]
         public IActionResult DeleteConfirm(int id)
         {
 
-            var student = students.FirstOrDefault(x => x.Id == id);
+            var student = _studentRepository.GetStudentById(id);
             if (student == null) return NotFound();
-            students.Remove(student);
+            _studentRepository.DeleteStudent(id);
             return RedirectToAction("Index");
         }
 
