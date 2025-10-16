@@ -1,4 +1,4 @@
-﻿using AspDotNetCoreMVCExample.Models;
+﻿using AspDotNetCoreMVCExample.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace AspDotNetCoreMVCExample.Data

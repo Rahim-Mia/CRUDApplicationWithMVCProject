@@ -1,5 +1,6 @@
-﻿using AspDotNetCoreMVCExample.Data;
-using AspDotNetCoreMVCExample.Models;
+﻿using AspDotNetCoreMVCExample.ApplicationLayer.Repositories;
+using AspDotNetCoreMVCExample.Data;
+using AspDotNetCoreMVCExample.DAL.Models;
 
 namespace AspDotNetCoreMVCExample.Repositories
 {

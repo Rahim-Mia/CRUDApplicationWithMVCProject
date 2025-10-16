@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspDotNetCoreMVCExample", "AspDotNetCoreMVCExample\AspDotNetCoreMVCExample.csproj", "{F761FD34-565C-4016-8FC3-091EA2C8719A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{98B7DC49-B218-45EA-AA56-1B74074680DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "BAL\Infrastructure.csproj", "{8D394EA3-43A8-4547-9E18-601F396BD1C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{F761FD34-565C-4016-8FC3-091EA2C8719A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F761FD34-565C-4016-8FC3-091EA2C8719A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F761FD34-565C-4016-8FC3-091EA2C8719A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B7DC49-B218-45EA-AA56-1B74074680DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B7DC49-B218-45EA-AA56-1B74074680DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B7DC49-B218-45EA-AA56-1B74074680DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B7DC49-B218-45EA-AA56-1B74074680DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D394EA3-43A8-4547-9E18-601F396BD1C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D394EA3-43A8-4547-9E18-601F396BD1C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D394EA3-43A8-4547-9E18-601F396BD1C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D394EA3-43A8-4547-9E18-601F396BD1C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

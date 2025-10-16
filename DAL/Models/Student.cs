@@ -1,9 +1,9 @@
 ﻿
-using AspDotNetCoreMVCExample.Models.Custom_Validation_Attribute;
+using AspDotNetCoreMVCExample.DAL.Models.Custom_Validation_Attribute;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace AspDotNetCoreMVCExample.Models
+namespace AspDotNetCoreMVCExample.DAL.Models
 {
     public class Student
     {

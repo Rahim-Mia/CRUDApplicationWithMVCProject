@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
-namespace AspDotNetCoreMVCExample.Models.Custom_Validation_Attribute
+namespace AspDotNetCoreMVCExample.DAL.Models.Custom_Validation_Attribute
 {
     public class ValidMobileNumber: ValidationAttribute
     {

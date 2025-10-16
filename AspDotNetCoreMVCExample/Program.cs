@@ -1,3 +1,4 @@
+using AspDotNetCoreMVCExample.DAL.Interfaces;
 using AspDotNetCoreMVCExample.Data;
 using AspDotNetCoreMVCExample.Repositories;
 using Microsoft.EntityFrameworkCore;

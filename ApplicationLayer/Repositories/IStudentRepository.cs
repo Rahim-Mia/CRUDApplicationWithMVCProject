@@ -1,6 +1,7 @@
-﻿using AspDotNetCoreMVCExample.Models;
+﻿using AspDotNetCoreMVCExample.DAL.Models;
+using AspDotNetCoreMVCExample.Repositories;
 
-namespace AspDotNetCoreMVCExample.Repositories
+namespace AspDotNetCoreMVCExample.ApplicationLayer.Repositories
 {
     public interface IStudentRepository
     {
