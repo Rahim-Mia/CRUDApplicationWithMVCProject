@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using AspDotNetCoreMVCExample.DAL.Models;
+using AspDotNetCoreMVCExample.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AspDotNetCoreMVCExample.Controllers

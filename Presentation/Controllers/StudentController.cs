@@ -1,6 +1,5 @@
-﻿
-using AspDotNetCoreMVCExample.DAL.Interfaces;
-using AspDotNetCoreMVCExample.DAL.Models;
+﻿using AspDotNetCoreMVCExample.Data;
+using AspDotNetCoreMVCExample.Models;
 using AspDotNetCoreMVCExample.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
